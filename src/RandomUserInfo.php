@@ -92,28 +92,27 @@ class RandomUserInfo
         ,'阅','彦','宇','雨','洋','忠','宗','曼','紫','逸','贤','蝶','菡','绿','蓝','儿','翠','烟'];
 
     /**
-     * 获取昵称
-     * @param string $quantity 名数 rand为随机1-2
+     * 获取姓名
+     * @param string $quantity 名数 rand为随机1-2个名
      * @return string
      */
     public static function getCompellation($quantity ='rand')
     {
-        $tou_num=rand(0,count(self::arrXing)-1);
-        $wei_num=rand(0,count(self::arrMing)-1);
-        $nicheng=self::nicheng_tou[$tou_num];
+
+        $nicheng=self::arrXing[mt_rand(0,count(self::arrXing)-1)];
         if($quantity =='rand'){
-            $nicheng .= mt_rand(0,1)?self::nicheng_wei[$wei_num]:self::nicheng_wei[$wei_num].self::nicheng_wei[$wei_num];
+            $nicheng .= mt_rand(0,1)?
+                self::arrMing[mt_rand(0,count(self::arrMing)-1)]
+                :
+                (mt_rand(0,1)?self::arrMing[mt_rand(0,count(self::arrMing)-1)]:self::arrMing[mt_rand(0,count(self::arrMing)-1)]) .(mt_rand(0,1)?self::arrMing[mt_rand(0,count(self::arrMing)-1)]:self::arrMing[mt_rand(0,count(self::arrMing)-1)]);
         }else if($quantity >=1 || $quantity<5){
             for($i=1;$i<=$quantity;$i++)
             {
-                $nicheng .=self::nicheng_wei[$wei_num];
+                $nicheng .=(mt_rand(0,1)?self::arrMing[mt_rand(0,count(self::arrMing)-1)]:self::arrMing[mt_rand(0,count(self::arrMing)-1)]);
             }
         }
-        for($i=1;$i<=$quantity;$i++)
-        {
-            $nicheng .=self::nicheng_wei[$wei_num];
-        }
         return $nicheng;
+
     }
 
 }
