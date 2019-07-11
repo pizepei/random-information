@@ -1,0 +1,29 @@
+{
+    "name": "pizepei/random-information",
+    "description": "normative",
+    "keywords": ["随机","random","昵称","nickname","头像","head portrait"],
+    "homepage": "https://org.heil.top/",
+    "authors": [
+        {
+            "name": "pizepei",
+            "email": "pizepei@pizepei.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=6.0.0",
+        "ext-json": "*",
+        "ext-zip": "*"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "pizepei\\randomInformation\\": "src/"
+        }
+    }
+}
