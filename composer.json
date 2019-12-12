@@ -13,7 +13,6 @@
     "require": {
         "php": ">=6.0.0",
         "ext-json": "*",
-        "ext-zip": "*"
     },
     "repositories": {
         "packagist": {
