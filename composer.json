@@ -15,10 +15,6 @@
         "ext-json": "*",
     },
     "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
     },
     "autoload": {
         "psr-4": {
